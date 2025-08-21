@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UFG</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="Encabezado">
+        <div class="Logo">
+            <p>UFG</p>
+        </div>
+        <div class="Titulo">
+            <h1>G-Net</h1>
+        <div class="div-Busqueda">
+            <div class="search-container">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <input class="input-Busqueda" type="text" placeholder="Buscar Personas, publicaciones....">
+            </div>
+        </div>
+        </div>
+        
+        <div class="Notificaciones">
+            <div class="MenuNotificaciones">
+                <img src="Imagenes/Encabezado/notificacion.png" alt="Notificaciones" width="20" height="20">
+            </div>
+        </div>
+        <!-- Botón de chat en el encabezado -->
+        <div class="Chat-Encabezado">
+            <button class="chat-button" aria-label="Chat">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 12H8.01M12 12H12.01M16 12H16.01M21.0039 12C21.0039 16.9706 16.9745 21 12.0039 21C9.9675 21 3.00463 21 3.00463 21C3.00463 21 4.56382 17.2561 3.93982 16.0008C3.34076 14.7956 3.00391 13.4372 3.00391 12C3.00391 7.02944 7.03334 3 12.0039 3C16.9745 3 21.0039 7.02944 21.0039 12Z" stroke="current_Color" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+        <div class="Usuario">
+            <div class="MenuUsuario">
+                <div class="perfil-usuario">TU</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cards -->
+    <div class="cards">
+        <!-- Card para publicaciones -->
+        <div class="card-publicar">
+            <div class="person-input-container">
+                <p class="person">Yo</p>
+                <input class="input-Compartir" type="text" placeholder="Quieres compartir algo..." required>
+                <!-- Input para imágenes y videos -->
+                <input class="input-media" type="file" accept="image/*,video/*" style="display:none" multiple>
+            </div>
+            <div class="card-footer">
+                <button class="archivar-imagen" title="Agregar imagen o video" type="button">
+                    <span style="display:flex;align-items:center;gap:4px;">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor">
+                            <rect width="18" height="14" x="3" y="5" rx="2" ry="2" stroke-width="2"/>
+                            <circle cx="8" cy="10" r="2" stroke-width="2"/>
+                            <rect x="14" y="12" width="5" height="4" rx="1" stroke-width="2"/>
+                        </svg>
+                        <span style="font-size:0.92em;color:#A0AECF;">Imagen/Video</span>
+                    </span>
+                    <span class="tooltip-media" style="position:absolute;left:0;top:110%;background:#23253a;color:#fff;padding:4px 10px;border-radius:6px;font-size:0.85em;white-space:nowrap;box-shadow:0 2px 8px #0003;display:none;z-index:10;">Agregar imagen o video</span>
+                </button>
+            <script>
+            // Mostrar tooltip al pasar el mouse
+            document.addEventListener('DOMContentLoaded', function() {
+                const btn = document.querySelector('.archivar-imagen');
+                if(btn){
+                    const tooltip = btn.querySelector('.tooltip-media');
+                    btn.addEventListener('mouseenter',()=>{if(tooltip)tooltip.style.display='block';});
+                    btn.addEventListener('mouseleave',()=>{if(tooltip)tooltip.style.display='none';});
+                }
+            });
+            </script>
+                <button class="publicar-button">Publicar</button>
+            </div>
+            <!-- Contenedor para previsualización de imágenes y videos -->
+            <div class="media-preview" style="margin-top:10px;"></div>
+            </div>
+        </div>
+    </div>
+     <!-- Cards del Perfil-->
+        <div class="card-perfil">
+            <div class="perfil-header">
+                <div class="perfil-usuario">KP</div>
+                <div class="perfil-info">
+                    <h3 class="perfil-nombre">Usuario</h3>
+                    <p class="perfil-handle">@usuario</p>
+                </div>
+            </div>
+            <div class="perfil-stats">
+                <div class="stat"><span class="label">Seguidores</span><span class="value">1.2K</span></div>
+                <div class="stat"><span class="label">Siguiendo</span><span class="value">856</span></div>
+                <div class="stat"><span class="label">Publicaciones</span><span class="value">342</span></div>
+            </div>
+        </div>
+
+        <!-- Secciones de la app -->
+        <div class="card-secciones">
+            <button class="seccion-item">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+              </svg>
+              <span>Inicio</span>
+            </button>
+            <button class="seccion-item">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+              </svg>
+              <span>Perfil</span>
+            </button>
+            <button class="seccion-item">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+              </svg>
+              <span>Comunidades</span>
+            </button>
+            <button class="seccion-item">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21.7 9.4a.9.9 0 0 0-.1-.2 3 3 0 0 0-.1-.3l-2.1-4.8A.8.8 0 0 0 18.6 3.8H5.4a.8.8 0 0 0-.8.5L2.5 9.1a2.1 2.1 0 0 0 0 1.6 3.6 3.6 0 0 0 2 1.8V19.5c0 .3.2.5.5.5h14c.3 0 .5-.2.5-.5v-7.1a3.6 3.6 0 0 0 2-1.8c.1-.2.1-.4.1-.5.1-.2.1-.5.1-.7ZM9.8 19V15h1.5v4Zm3 0V15h1.5v4Zm5.2 0h-2.5v-4.5c0-.3-.2-.5-.5-.5H7.5c-.3 0-.5.2-.5.5V19H4.5v-6.7c1.2-.5 2.4-1.3 3-2.1a4 4 0 0 0 6 0c.6.8 1.8 1.6 3 2.1V19Zm2.1-9.5c-.6.8-1.6 1.3-2.1 1.3-.8 0-2.3-.6-2.3-1.9 0-.3-.3-.5-.6-.5s-.6.2-.6.5c0 1.3-1.5 1.9-2.3 1.9-.8 0-2.3-.6-2.3-1.9 0-.3-.3-.5-.6-.5s-.6.2-.6.5c0 1.3-1.5 1.9-2.3 1.9-.5 0-1.5-.5-2.1-1.3-.1-.1-.1-.3 0-.4L6.2 5.3h11.6l1.9 4.2c.1.1.1.2-.1.3Z"/>
+              </svg>
+              <span>Marketplace</span>
+            </button>
+        </div>
+        <div class="card-tendencia">
+            <h2>Tendencias</h2>
+            <ul class="tendencias-list">
+                <li class="tendencia-item">
+                    <div class="hashtag">
+                        <span class="tendencia-label">#UFG2025</span>
+                    </div>
+                    <div class="tendencia-barra">
+                        <div class="tendencia-progreso" style="width: 70%;"></div>
+                    </div>
+                    <div class="compartidos">
+                    <span class="tendencia-count">1,234 compartidos</span>
+                    </div>
+                </li>
+                <li class="tendencia-item">
+                    <div class="hashtag">
+                    <span class="tendencia-label">#VidaEstudiantil</span>
+                    </div>
+                    <div class="compartidos">
+                    <span class="tendencia-count">567 compartidos</span>
+                    </div>
+                </li>
+                <li class="tendencia-item">
+                    <div class="hashtag">
+                    <span class="tendencia-label">#CalendarioAcadémico</span>
+                    </div>
+                    <div class="compartidos">
+                    <span class="tendencia-count">890 compartidos</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!--Card seguidores-->
+        <div class="card-seguidor">
+            <div class="seguidores">
+                <h2>Sugerencias</h2>
+                <!--Lista de usuarios sugeridos-->
+                <ul>
+                    <li>
+                        <div class="perfil-header">
+                            <div class="burbuja-perfil">CM</div>
+                            <div class="follower-info">
+                                <div class="follower-name">Carlos Mendez</div>
+                                <div class="follower-handle">@carlosmendez</div>
+                            </div>
+                        </div>
+                        <button class="follow-btn">Seguir</button>
+                    </li>
+                    <li>
+                        <div class="perfil-header">
+                            <div class="burbuja-perfil">LR</div>
+                            <div class="follower-info">
+                                <div class="follower-name">Laura Ruiz</div>
+                                <div class="follower-handle">@lauraruiz</div>
+                            </div>
+                        </div>
+                        <button class="follow-btn">Seguir</button>
+                    </li>
+                    <li>
+                        <div class="perfil-header">
+                            <div class="burbuja-perfil">CM</div>
+                            <div class="follower-info">
+                                <div class="follower-name">Carlos Mendez</div>
+                                <div class="follower-handle">@carlosmendez</div>
+                            </div>
+                        </div>
+                        <button class="follow-btn">Seguir</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--Barra de tareas responsive-->
+        <div class="barra-tareas">
+            <!-- Botón Inicio -->
+            <button class="seccion-item">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+              </svg>
+            </button>
+            
+            
+            <!-- Botón Marketplace -->
+            <button class="seccion-item">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 21v-7.5a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349M3.75 21V9.349m0 0a3.001 3.001 0 0 0 3.75-.615A2.993 2.993 0 0 0 9.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 0 0 2.25 1.016c.896 0 1.7-.393 2.25-1.015a3.001 3.001 0 0 0 3.75.614m-16.5 0a3.004 3.004 0 0 1-.621-4.72l1.189-1.19A1.5 1.5 0 0 1 5.378 3h13.243a1.5 1.5 0 0 1 1.06.44l1.19 1.189a3 3 0 0 1-.621 4.72M6.75 18h3.75a.75.75 0 0 0 .75-.75V13.5a.75.75 0 0 0-.75-.75H6.75a.75.75 0 0 0-.75.75v3.75c0 .414.336.75.75.75Z" />
+              </svg>
+            </button>
+            <!-- Botón Comunidades -->
+            <button class="seccion-item">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+              </svg>
+            </button>
+            <!-- Botón Perfil -->
+            <button class="seccion-item">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3 3 0 1 1-7.5 0 3 3 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+              </svg>
+            </button>
+        </div>
+        <!-- Script JavaScript -->
+        <script src="script.js"></script>
+</body>
+
+<!-- Botón flotante de chat -->
+<button class="chat-fab" title="Ir a chats">
+    <svg viewBox="0 0 24 24">
+        <path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h4l4 4 4-4h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
+    </svg>
+</button>
+</html>
+</body>
+</html>
