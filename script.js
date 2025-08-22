@@ -18,9 +18,29 @@ const publicacionCalendario = {
     liked: false,
     imagenes: [
         {
-            id: 'calendario2025',
+            id: 'calendario2025-ene-feb',
             url: 'Imagenes/publicaciones/Calendario.png',
-            nombre: 'Calendario Académico UFG 2025'
+            nombre: 'Calendario Académico UFG 2025 (Enero-Febrero)'
+        },
+        {
+            id: 'calendario2025-mar-abr',
+            url: 'Imagenes/publicaciones/Calendario2.png',
+            nombre: 'Calendario Académico UFG 2025 (Marzo-Abril)'
+        },
+        {
+            id: 'calendario2025-may-jun',
+            url: 'Imagenes/publicaciones/Calendario3.png',
+            nombre: 'Calendario Académico UFG 2025 (Mayo-Junio)'
+        },
+        {
+            id: 'calendario2025-jul-ago',
+            url: 'Imagenes/publicaciones/Calendario4.png',
+            nombre: 'Calendario Académico UFG 2025 (Julio-Agosto)'
+        },
+        {
+            id: 'calendario2025-nov-dic',
+            url: 'Imagenes/publicaciones/Calendario5.png',
+            nombre: 'Calendario Académico UFG 2025 (Noviembre-Diciembre)'
         }
     ]
 };
@@ -157,24 +177,78 @@ function inicializarEventos() {
     window.archivosSeleccionados = [];
     if (inputMedia && mediaPreview) {
         inputMedia.addEventListener('change', function() {
-            // Permitir varias imágenes en varias selecciones (máx 4)
             let nuevas = Array.from(this.files);
             if (!window.archivosSeleccionados) window.archivosSeleccionados = [];
-            // Filtrar para no pasar de 4
-            let total = window.archivosSeleccionados.length + nuevas.length;
-            if (total > 4) {
-                alert('Máximo 4 imágenes por publicación');
-                nuevas = nuevas.slice(0, 4 - window.archivosSeleccionados.length);
+            // Limitar a solo un video por publicación
+            const yaHayVideo = window.archivosSeleccionados.some(f => f.type && f.type.startsWith('video/'));
+            let nuevasFiltradas = [];
+            let videoAgregado = yaHayVideo;
+            for (let i = 0; i < nuevas.length; i++) {
+                const file = nuevas[i];
+                if (file.type.startsWith('video/')) {
+                    if (videoAgregado) {
+                        mostrarModalAviso('Solo puedes adjuntar un video por publicación.');
+                        continue;
+                    }
+                    videoAgregado = true;
+                }
+                nuevasFiltradas.push(file);
             }
-            // Agregar nuevas imágenes, evitando duplicados por nombre y tamaño
-            nuevas.forEach(nueva => {
+    // Modal visual para avisos
+    function mostrarModalAviso(mensaje) {
+        // Si ya hay un modal, no crear otro
+        if (document.querySelector('.modal-aviso')) return;
+        const modal = document.createElement('div');
+        modal.className = 'modal-aviso';
+        modal.style.cssText = `
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0,0,0,0.45);
+            display: flex; align-items: center; justify-content: center;
+            z-index: 99999;
+        `;
+        const card = document.createElement('div');
+        card.style.cssText = `
+            background: #23253a;
+            color: #fff;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px #0007;
+            padding: 32px 28px 22px 28px;
+            min-width: 320px;
+            max-width: 90vw;
+            text-align: center;
+            font-size: 1.13rem;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        `;
+        card.innerHTML = `
+            <div style="font-size:2.1rem;margin-bottom:10px;">⚠️</div>
+            <div style="margin-bottom:22px;">${mensaje}</div>
+            <button style="background:#ff8a5b;color:#fff;border:none;padding:8px 28px;border-radius:8px;font-size:1.05rem;font-weight:600;cursor:pointer;box-shadow:0 2px 8px #0002;transition:background 0.18s;">Aceptar</button>
+        `;
+        const btn = card.querySelector('button');
+        btn.onclick = function() {
+            document.body.removeChild(modal);
+        };
+        modal.appendChild(card);
+        document.body.appendChild(modal);
+    }
+            // Filtrar para no pasar de 4 archivos en total
+            let total = window.archivosSeleccionados.length + nuevasFiltradas.length;
+            if (total > 4) {
+                alert('Máximo 4 archivos por publicación');
+                nuevasFiltradas = nuevasFiltradas.slice(0, 4 - window.archivosSeleccionados.length);
+            }
+            // Agregar nuevas imágenes/videos, evitando duplicados por nombre y tamaño
+            nuevasFiltradas.forEach(nueva => {
                 if (!window.archivosSeleccionados.some(f => f.name === nueva.name && f.size === nueva.size)) {
                     window.archivosSeleccionados.push(nueva);
                 }
             });
             mostrarPreviewMedia();
             toggleBotonPublicar();
-            // Limpiar el input para permitir volver a seleccionar las mismas imágenes si se desea
             this.value = '';
         });
     }
@@ -722,9 +796,9 @@ function abrirSelectorImagen() {
 function manejarSeleccionImagen(archivos) {
     console.log('Archivos seleccionados:', archivos);
     
-    // Validar número máximo de imágenes (4)
-    if (imagenesSeleccionadas.length + archivos.length > 4) {
-        alert('Máximo 4 imágenes por publicación');
+    // Validar número máximo de imágenes (10)
+    if (imagenesSeleccionadas.length + archivos.length > 10) {
+        alert('Máximo 10 imágenes por publicación');
         return;
     }
     
@@ -1187,8 +1261,19 @@ function renderizarPublicacion(publicacion) {
         mediaHTML = generarHTMLImagenesExistente(publicacion.imagenes);
     }
 
+
+    let claseExtra = '';
+    let htmlAncla = '';
+    if (
+        publicacion.id === 1 || publicacion.id === 'calendario2025' || (publicacion.imagenes && publicacion.imagenes.some(img => img.id === 'calendario2025'))
+    ) {
+        claseExtra = ' card-calendario';
+        htmlAncla = `<div class="ancla-calendario" title="Publicación fijada" style="position:absolute;top:12px;right:18px;z-index:2;display:flex;align-items:center;gap:4px;background:#transparent;padding:3px 10px 3px 8px;border-radius:8px;"><img src="Imagenes/publicaciones/fijado.png" alt="Fijado" style="width:18px;height:18px;object-fit:contain;vertical-align:middle;"> <span style="color:#fff;font-weight:bold;">Fijado</span></div>`;
+    }
+
     const htmlPublicacion = `
-        <div class="card" data-id="${publicacion.id}">
+        <div class="card${claseExtra}" data-id="${publicacion.id}" style="position:relative;">
+            ${htmlAncla}
             <div class="card-content">
                 <p class="person">UD</p>
                 <div class="usuario-info">
@@ -1228,8 +1313,26 @@ function renderizarPublicacion(publicacion) {
         </div>
     `;
 
-    // Insertar la nueva publicación después de la card de publicar
-    cardPublicar.insertAdjacentHTML('afterend', htmlPublicacion);
+    // Si es la publicación del calendario, eliminar cualquier otra y fijar después de card-publicar
+    if (claseExtra) {
+        const contenedor = document.querySelector('.cards');
+        const cardCalendarioExistente = contenedor.querySelector('.card.card-calendario');
+        if (cardCalendarioExistente) cardCalendarioExistente.remove();
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = htmlPublicacion;
+        contenedor.insertBefore(tempDiv.firstElementChild, cardPublicar.nextSibling);
+        return;
+    }
+    // Si no es la del calendario, insertar después de la card-calendario si existe, si no después de card-publicar
+    const contenedor = document.querySelector('.cards');
+    const cardCalendario = contenedor.querySelector('.card.card-calendario');
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = htmlPublicacion;
+    if (cardCalendario) {
+        contenedor.insertBefore(tempDiv.firstElementChild, cardCalendario.nextSibling);
+    } else {
+        contenedor.insertBefore(tempDiv.firstElementChild, cardPublicar.nextSibling);
+    }
     console.log('Publicación insertada en el DOM');
 
     // Agregar animación de entrada
@@ -1863,3 +1966,4 @@ function actualizarComentariosPreview(publicacionId) {
 document.addEventListener('DOMContentLoaded', function() {
     toggleBotonPublicar();
 });
+
