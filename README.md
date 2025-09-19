@@ -169,12 +169,11 @@ Este proyecto está desarrollado para uso académico en la Universidad Francisco
 - **Universidad**: Universidad Francisco Gavidia (UFG)
 - **Año**: 2025
 
-## 📞 Contacto
 
-Para soporte técnico o consultas sobre el proyecto, contacta a través de los canales oficiales de la UFG.
 
 ---
 
 **Universidad Francisco Gavidia - Powered by Arizona State University®**
+
 
 *G-Net - Conectando la comunidad universitaria UFG* 🎓
