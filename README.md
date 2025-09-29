@@ -149,16 +149,6 @@ Los estilos principales están en `style.css` y utilizan variables CSS para fác
 - ✅ Edge (v90+)
 - ✅ Dispositivos móviles iOS/Android
 
-## 🤝 Contribución
-
-Este proyecto fue desarrollado para la Universidad Francisco Gavidia. Para contribuir:
-
-1. Fork el proyecto
-2. Crea una rama para tu funcionalidad (`git checkout -b feature/nueva-funcionalidad`)
-3. Commit tus cambios (`git commit -am 'Añade nueva funcionalidad'`)
-4. Push a la rama (`git push origin feature/nueva-funcionalidad`)
-5. Crea un Pull Request
-
 ## 📄 Licencia
 
 Este proyecto está desarrollado para uso académico en la Universidad Francisco Gavidia (UFG).
@@ -177,3 +167,4 @@ Este proyecto está desarrollado para uso académico en la Universidad Francisco
 
 
 *G-Net - Conectando la comunidad universitaria UFG* 🎓
+
