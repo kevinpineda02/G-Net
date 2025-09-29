@@ -3,240 +3,379 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UFG</title>
-    <link rel="stylesheet" href="style.css">
+    <title>G-Net</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="/Logo/Logo-fotor-bg-remover-20250928102525.png">
 </head>
 <body>
+    <!--Encabezado-->
     <div class="Encabezado">
-        <div class="Logo">
-            <p>UFG</p>
-        </div>
-        <div class="Titulo">
-            <h1>G-Net</h1>
-        <div class="div-Busqueda">
-            <div class="search-container">
-                <svg class="search-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <input class="input-Busqueda" type="text" placeholder="Buscar Personas, publicaciones....">
+        <div class="titulo">
+            <h2>G-NET</h2>
+            <div class="logo">
+                <img src="/Logo/Logo-fotor-bg-remover-20250928102525.png" alt="Logo G-Net">
             </div>
         </div>
-        </div>
-        
-        <div class="Notificaciones">
-            <div class="MenuNotificaciones">
-                <img src="Imagenes/Encabezado/notificacion.png" alt="Notificaciones" width="20" height="20">
-            </div>
-        </div>
-        <!-- Botón de chat en el encabezado -->
-        <div class="Chat-Encabezado">
-            <button class="chat-button" aria-label="Chat">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M8 12H8.01M12 12H12.01M16 12H16.01M21.0039 12C21.0039 16.9706 16.9745 21 12.0039 21C9.9675 21 3.00463 21 3.00463 21C3.00463 21 4.56382 17.2561 3.93982 16.0008C3.34076 14.7956 3.00391 13.4372 3.00391 12C3.00391 7.02944 7.03334 3 12.0039 3C16.9745 3 21.0039 7.02944 21.0039 12Z" stroke="current_Color" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <div class="mensaje">
+            <!--<Botón de Modo Claro/Oscuro-->
+            <button class="modo" onclick="cambiarModo()">
+                <svg id="icono-modo" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+</svg>
+<p>Tema</p>
+            </button>
+            <!--Boton de Mensaje-->
+            <button class="mensaje-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="24" height="24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 0 1-.923 1.785A5.969 5.969 0 0 0 6 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337Z" />
                 </svg>
+                <p>Mensajes</p>
             </button>
         </div>
-        <div class="Usuario">
-            <div class="MenuUsuario">
-                <div class="perfil-usuario">TU</div>
+    </div>
+    
+    <div class="contenido">
+        <div class="notificaciones">
+            <h3>Notificaciones:</h3>
+            <div class="notificacion">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0M3.124 7.5A8.969 8.969 0 0 1 5.292 3m13.416 0a8.969 8.969 0 0 1 2.168 4.5" />
+                </svg>
+                <span>Notificaciones:<p>Has recibido un mensaje</p></span>
+            </div>
+            
+            <div class="notificacion">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0M3.124 7.5A8.969 8.969 0 0 1 5.292 3m13.416 0a8.969 8.969 0 0 1 2.168 4.5" />
+                </svg>
+                <span>Notificaciones:<p>Nuevo seguidor</p></span>
+            </div>
+            
+            <div class="notificacion">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0M3.124 7.5A8.969 8.969 0 0 1 5.292 3m13.416 0a8.969 8.969 0 0 1 2.168 4.5" />
+                </svg>
+                <span>Notificaciones:<p>Le dieron Like a Tu publicacion</p></span>
+            </div>
+            
+            <div class="notificacion">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0M3.124 7.5A8.969 8.969 0 0 1 5.292 3m13.416 0a8.969 8.969 0 0 1 2.168 4.5" />
+                </svg>
+                <span>Notificaciones:<p>Comentaron Tu publicacion</p></span>
             </div>
         </div>
-    </div>
+        <div class="mi-perfil">
+            <div class="avatar">
+                <img src="/publicaciones/UFGPerfil.jpg" alt="Avatar usuario">
+            </div>
+            <div class="nombre-usuario-perfil">
+                <h3>UFG</h3>
+                <p>@ufg</p>
+                <div class="seguidores"><span>Seguidores: <span class="contador-seguidores">100</span></span></div>
+            </div>
+            <div class="siguiendo"><span>Siguiendo: <span class="contador-seguidos">30</span></span></div>
+        </div>
+        <div class="secciones">
+            <ul>
+                <!--Boton de Inicio-->
+                <li><button class="active" onclick="seleccionarVentana(this)">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+</svg>
+                Inicio
+                </button></li>
+                <!--Boton de Marketplace-->
+               <li>
+                   <button onclick="seleccionarVentana(this)">
+                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                           <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 21v-7.5a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349M3.75 21V9.349m0 0a3.001 3.001 0 0 0 3.75-.615A2.993 2.993 0 0 0 9.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 0 0 2.25 1.016c.896 0 1.7-.393 2.25-1.015a3.001 3.001 0 0 0 3.75.614m-16.5 0a3.004 3.004 0 0 1-.621-4.72l1.189-1.19A1.5 1.5 0 0 1 5.378 3h13.243a1.5 1.5 0 0 1 1.06.44l1.19 1.189a3 3 0 0 1-.621 4.72M6.75 18h3.75a.75.75 0 0 0 .75-.75V13.5a.75.75 0 0 0-.75-.75H6.75a.75.75 0 0 0-.75.75v3.75c0 .414.336.75.75.75Z" />
+                       </svg>
+                       Marketplace
+                   </button>
+               </li>
 
-    <!-- Cards -->
-    <div class="cards">
-        <!-- Card para publicaciones -->
-        <div class="card-publicar">
-            <div class="person-input-container">
-                <p class="person">Yo</p>
-                <input class="input-Compartir" type="text" placeholder="Quieres compartir algo..." required>
-                <!-- Input para imágenes y videos -->
-                <input class="input-media" type="file" accept="image/*,video/*" style="display:none" multiple>
-            </div>
-            <div class="card-footer">
-                <button class="archivar-imagen" title="Agregar imagen o video" type="button">
-                    <span style="display:flex;align-items:center;gap:4px;">
-                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor">
-                            <rect width="18" height="14" x="3" y="5" rx="2" ry="2" stroke-width="2"/>
-                            <circle cx="8" cy="10" r="2" stroke-width="2"/>
-                            <rect x="14" y="12" width="5" height="4" rx="1" stroke-width="2"/>
-                        </svg>
-                        <span style="font-size:0.92em;color:#A0AECF;">Imagen/Video</span>
-                    </span>
-                    <span class="tooltip-media" style="position:absolute;left:0;top:110%;background:#23253a;color:#fff;padding:4px 10px;border-radius:6px;font-size:0.85em;white-space:nowrap;box-shadow:0 2px 8px #0003;display:none;z-index:10;">Agregar imagen o video</span>
-                </button>
-            <script>
-            // Mostrar tooltip al pasar el mouse
-            document.addEventListener('DOMContentLoaded', function() {
-                const btn = document.querySelector('.archivar-imagen');
-                if(btn){
-                    const tooltip = btn.querySelector('.tooltip-media');
-                    btn.addEventListener('mouseenter',()=>{if(tooltip)tooltip.style.display='block';});
-                    btn.addEventListener('mouseleave',()=>{if(tooltip)tooltip.style.display='none';});
-                }
-            });
-            </script>
-                <button class="publicar-button">Publicar</button>
-            </div>
-            <!-- Contenedor para previsualización de imágenes y videos -->
-            <div class="media-preview" style="margin-top:10px;"></div>
-            </div>
+               <!--Boton de Comunidad-->
+               <li><button onclick="seleccionarVentana(this)"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+               <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+</svg>
+Comunidad</button></li>
+               <!--Boton de Mi Perfil-->
+               <li><button onclick="seleccionarVentana(this)"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+               <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                </svg>
+              Mi Perfil</button></li>
+            </ul>
+            <!--Boton de Inicio-->
+
         </div>
-    </div>
-     <!-- Cards del Perfil-->
-        <div class="card-perfil">
-            <div class="perfil-header">
-                <div class="perfil-usuario">KP</div>
-                <div class="perfil-info">
-                    <h3 class="perfil-nombre">Usuario</h3>
-                    <p class="perfil-handle">@usuario</p>
+
+        <div class="publicaciones">
+            <!--Avatar de Usuario en la publicacion-->
+            <div class="usuario-header">
+                <div class="avatar">
+                    <img src="/publicaciones/UFGPerfil.jpg" alt="Avatar usuario">
+                </div>
+                <span class="nombre-usuario">UFG</span>
+            </div>
+
+            <input type="text" id="texto-publicacion" placeholder="Que estas pensando?" onkeydown="verificarEnter(event)">
+            <input type="file" id="selector-imagenes" multiple="multiple" accept="image/*,image/jpeg,image/png,image/gif,image/webp,video/*,video/mp4,video/webm,video/ogg" style="display: none;">
+            
+            <!-- Contenedor de previsualización de archivos multimedia -->
+            <div id="preview-imagenes" class="preview-imagenes" style="display: none;">
+                <div class="preview-header">
+                    <h4>Archivos seleccionados: <span class="limite-info">(máx. 5 archivos)</span></h4>
+                    <button class="btn-limpiar-imagenes" onclick="limpiarImagenes()">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="16" height="16">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                        </svg>
+                        Limpiar todo
+                    </button>
+                </div>
+                <div id="lista-preview-imagenes" class="lista-preview-imagenes"></div>
+                <div class="preview-footer">
+                    <span id="contador-imagenes">0 archivos seleccionados</span>
                 </div>
             </div>
-            <div class="perfil-stats">
-                <div class="stat"><span class="label">Seguidores</span><span class="value">1.2K</span></div>
-                <div class="stat"><span class="label">Siguiendo</span><span class="value">856</span></div>
-                <div class="stat"><span class="label">Publicaciones</span><span class="value">342</span></div>
+            
+            <!-- Indicador de encuesta creada -->
+            <div id="indicador-encuesta" class="indicador-encuesta" style="display: none;">
+                <div class="encuesta-preview">
+                    <div class="encuesta-preview-header">
+                        <h4>Encuesta preparada</h4>
+                        <button class="btn-eliminar-encuesta" onclick="eliminarEncuestaPendiente()">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="16" height="16">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="encuesta-preview-contenido">
+                        <p id="pregunta-preview"></p>
+                        <p id="opciones-preview"></p>
+                        <p id="duracion-preview"></p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contenedor de creador de encuestas -->
+            <div id="creador-encuesta" class="creador-encuesta" style="display: none;">
+                <div class="encuesta-header">
+                    <h4>Crear Encuesta</h4>
+                    <button class="btn-cerrar-encuesta" onclick="cerrarCreadorEncuesta()">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="16" height="16">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="encuesta-contenido">
+                    <input type="text" id="pregunta-encuesta" placeholder="¿Cuál es tu pregunta?" maxlength="200">
+                    <div class="opciones-encuesta">
+                        <div class="opcion-input">
+                            <input type="text" placeholder="Opción 1" maxlength="100">
+                            <button class="btn-eliminar-opcion" onclick="eliminarOpcion(this)" style="display: none;">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="12" height="12">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="opcion-input">
+                            <input type="text" placeholder="Opción 2" maxlength="100">
+                            <button class="btn-eliminar-opcion" onclick="eliminarOpcion(this)" style="display: none;">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="12" height="12">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <button class="btn-agregar-opcion" onclick="agregarOpcion()">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="16" height="16">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                        </svg>
+                        Agregar opción
+                    </button>
+                    <div class="encuesta-configuracion">
+                        <label class="duracion-label">
+                            <span>Duración:</span>
+                            <select id="duracion-encuesta">
+                                <option value="24">24 horas</option>
+                                <option value="72">3 días</option>
+                                <option value="168">1 semana</option>
+                                <option value="336">2 semanas</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="separador"></div>
+            <div class="iconos-container">
+            <div class="iconos">
+                <button class="icono-btn" onclick="abrirSelectorImagenes()">
+                    <!-- Icono de imagen/video -->
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+                    </svg>
+                </button>
+            </div>
+            <div class="iconos">
+                <button class="icono-btn" onclick="abrirSelectorVideos()">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z" />
+                    </svg>
+                </button>
+            </div>
+            <div class="iconos">
+                <button class="icono-btn" onclick="abrirCreadorEncuesta()">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM3.75 12h.007v.008H3.75V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm-.375 5.25h.007v.008H3.75v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+                    </svg>
+                </button>
+            </div>
+            <div class="iconos">
+                <button class="icono-btn" onclick="publicarContenido()">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
+                </svg>
+                </button>
             </div>
         </div>
-
-        <!-- Secciones de la app -->
-        <div class="card-secciones">
-            <button class="seccion-item">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
-              </svg>
-              <span>Inicio</span>
-            </button>
-            <button class="seccion-item">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
-              </svg>
-              <span>Perfil</span>
-            </button>
-            <button class="seccion-item">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
-              </svg>
-              <span>Comunidades</span>
-            </button>
-            <button class="seccion-item">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M21.7 9.4a.9.9 0 0 0-.1-.2 3 3 0 0 0-.1-.3l-2.1-4.8A.8.8 0 0 0 18.6 3.8H5.4a.8.8 0 0 0-.8.5L2.5 9.1a2.1 2.1 0 0 0 0 1.6 3.6 3.6 0 0 0 2 1.8V19.5c0 .3.2.5.5.5h14c.3 0 .5-.2.5-.5v-7.1a3.6 3.6 0 0 0 2-1.8c.1-.2.1-.4.1-.5.1-.2.1-.5.1-.7ZM9.8 19V15h1.5v4Zm3 0V15h1.5v4Zm5.2 0h-2.5v-4.5c0-.3-.2-.5-.5-.5H7.5c-.3 0-.5.2-.5.5V19H4.5v-6.7c1.2-.5 2.4-1.3 3-2.1a4 4 0 0 0 6 0c.6.8 1.8 1.6 3 2.1V19Zm2.1-9.5c-.6.8-1.6 1.3-2.1 1.3-.8 0-2.3-.6-2.3-1.9 0-.3-.3-.5-.6-.5s-.6.2-.6.5c0 1.3-1.5 1.9-2.3 1.9-.8 0-2.3-.6-2.3-1.9 0-.3-.3-.5-.6-.5s-.6.2-.6.5c0 1.3-1.5 1.9-2.3 1.9-.5 0-1.5-.5-2.1-1.3-.1-.1-.1-.3 0-.4L6.2 5.3h11.6l1.9 4.2c.1.1.1.2-.1.3Z"/>
-              </svg>
-              <span>Marketplace</span>
-            </button>
-        </div>
-        <div class="card-tendencia">
-            <h2>Tendencias</h2>
-            <ul class="tendencias-list">
-                <li class="tendencia-item">
-                    <div class="hashtag">
-                        <span class="tendencia-label">#UFG2025</span>
+    </div>
+    
+    <!-- Contenedor de publicaciones -->
+    <div class="feed-publicaciones">
+        <!-- Publicación individual -->
+        <div class="contenedor-publicacion">
+            <div class="publicacion" id="pub_ejemplo_1">
+                <div class="usuario-info">
+                    <div class="avatar">
+                        <img src="/publicaciones/UFGPerfil.jpg" alt="Avatar usuario">
                     </div>
-                    <div class="tendencia-barra">
-                        <div class="tendencia-progreso" style="width: 70%;"></div>
-                    </div>
-                    <div class="compartidos">
-                    <span class="tendencia-count">1,234 compartidos</span>
-                    </div>
-                </li>
-                <li class="tendencia-item">
-                    <div class="hashtag">
-                    <span class="tendencia-label">#VidaEstudiantil</span>
-                    </div>
-                    <div class="compartidos">
-                    <span class="tendencia-count">567 compartidos</span>
-                    </div>
-                </li>
-                <li class="tendencia-item">
-                    <div class="hashtag">
-                    <span class="tendencia-label">#CalendarioAcadémico</span>
-                    </div>
-                    <div class="compartidos">
-                    <span class="tendencia-count">890 compartidos</span>
-                    </div>
-                </li>
-            </ul>
-        </div>
-
-        <!--Card seguidores-->
-        <div class="card-seguidor">
-            <div class="seguidores">
-                <h2>Sugerencias</h2>
-                <!--Lista de usuarios sugeridos-->
-                <ul>
-                    <li>
-                        <div class="perfil-header">
-                            <div class="burbuja-perfil">CM</div>
-                            <div class="follower-info">
-                                <div class="follower-name">Carlos Mendez</div>
-                                <div class="follower-handle">@carlosmendez</div>
-                            </div>
+                <div class="usuario-datos">
+                    <h4>UFG</h4>
+                    <p class="usuario-handle">@ufg</p>
+                    <p class="tiempo-publicacion">hace 4 horas</p>
+                </div>
+                <div class="menu-opciones">
+                    <button class="btn-menu">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="20" height="20">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 12.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 18.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5Z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="contenido-publicacion">
+                <p>El Calendario 2025 esta aquí de la UFG para las actividades académicas y administrativas.</p>
+                <div class="carrusel-imagenes">
+                    <div class="carrusel-contenedor">
+                        <div class="imagen-slide active">
+                            <img src="/publicaciones/Calendario.png" alt="Imagen de la publicación 1">
+                            <button class="btn-expandir" onclick="expandirImagen('/publicaciones/Calendario.png', 'Imagen de la publicación 1')">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="20" height="20">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
+                                </svg>
+                            </button>
                         </div>
-                        <button class="follow-btn">Seguir</button>
-                    </li>
-                    <li>
-                        <div class="perfil-header">
-                            <div class="burbuja-perfil">LR</div>
-                            <div class="follower-info">
-                                <div class="follower-name">Laura Ruiz</div>
-                                <div class="follower-handle">@lauraruiz</div>
-                            </div>
+                        <div class="imagen-slide">
+                            <img src="/publicaciones/Calendario1.png" alt="Imagen de la publicación 2">
+                            <button class="btn-expandir" onclick="expandirImagen('/publicaciones/Calendario1.png', 'Imagen de la publicación 2')">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="20" height="20">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
+                                </svg>
+                            </button>
                         </div>
-                        <button class="follow-btn">Seguir</button>
-                    </li>
-                    <li>
-                        <div class="perfil-header">
-                            <div class="burbuja-perfil">CM</div>
-                            <div class="follower-info">
-                                <div class="follower-name">Carlos Mendez</div>
-                                <div class="follower-handle">@carlosmendez</div>
-                            </div>
+                        <div class="imagen-slide">
+                            <img src="/publicaciones/Calendario2.png" alt="Imagen de la publicación 3">
+                            <button class="btn-expandir" onclick="expandirImagen('/publicaciones/Calendario2.png', 'Imagen de la publicación 3')">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="20" height="20">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
+                                </svg>
+                            </button>
                         </div>
-                        <button class="follow-btn">Seguir</button>
-                    </li>
-                </ul>
+                        <div class="imagen-slide">
+                            <img src="/publicaciones/Calendario3.png" alt="Imagen de la publicación 4">
+                            <button class="btn-expandir" onclick="expandirImagen('/publicaciones/Calendario3.png', 'Imagen de la publicación 4')">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="20" height="20">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="imagen-slide">
+                            <img src="/publicaciones/Calendario4.png" alt="Imagen de la publicación 5">
+                            <button class="btn-expandir" onclick="expandirImagen('/publicaciones/Calendario4.png', 'Imagen de la publicación 5')">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="20" height="20">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="imagen-slide">
+                            <img src="/publicaciones/Calendario5.png" alt="Imagen de la publicación 6">
+                            <button class="btn-expandir" onclick="expandirImagen('/publicaciones/Calendario5.png', 'Imagen de la publicación 6')">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="20" height="20">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Botones de navegación -->
+                    <button class="btn-anterior" onclick="cambiarSlide(-1)">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="24" height="24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                        </svg>
+                    </button>
+                    <button class="btn-siguiente" onclick="cambiarSlide(1)">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="24" height="24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                        </svg>
+                    </button>
+                    
+                    <!-- Indicadores -->
+                    <div class="indicadores">
+                        <div class="indicador active" onclick="irSlide(0)"></div>
+                        <div class="indicador" onclick="irSlide(1)"></div>
+                        <div class="indicador" onclick="irSlide(2)"></div>
+                        <div class="indicador" onclick="irSlide(3)"></div>
+                        <div class="indicador" onclick="irSlide(4)"></div>
+                        <div class="indicador" onclick="irSlide(5)"></div>
+                    </div>
+                    
+                    <!-- Contador de imágenes -->
+                    <div class="contador-imagenes">
+                        <span id="imagen-actual">1</span> / <span id="total-imagenes">6</span>
+                    </div>
+                </div>
+            </div>
+            <div class="separador"></div>
+            <div class="acciones-publicacion">
+                <button class="accion-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="20" height="20">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                    </svg>
+                    <span>89</span>
+                </button>
+                <button class="accion-btn" data-publicacion="pub_ejemplo_1" data-accion="comentar" onclick="toggleComentarios('pub_ejemplo_1')">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="20" height="20">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 0 1-.923 1.785A5.969 5.969 0 0 0 6 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337Z" />
+                    </svg>
+                    <span>9</span>
+                </button>
+                <button class="accion-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="20" height="20">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 1 0 0 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186 9.566-5.314m-9.566 7.5 9.566 5.314m0 0a2.25 2.25 0 1 0 3.935 2.186 2.25 2.25 0 0 0-3.935-2.186Zm0-11.814a2.25 2.25 0 1 0 3.935-2.186 2.25 2.25 0 0 0-3.935 2.186Z" />
+                    </svg>
+                    <span>Compartir</span>
+                </button>
+               </div>            
             </div>
         </div>
-        <!--Barra de tareas responsive-->
-        <div class="barra-tareas">
-            <!-- Botón Inicio -->
-            <button class="seccion-item">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
-              </svg>
-            </button>
-            
-            
-            <!-- Botón Marketplace -->
-            <button class="seccion-item">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 21v-7.5a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349M3.75 21V9.349m0 0a3.001 3.001 0 0 0 3.75-.615A2.993 2.993 0 0 0 9.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 0 0 2.25 1.016c.896 0 1.7-.393 2.25-1.015a3.001 3.001 0 0 0 3.75.614m-16.5 0a3.004 3.004 0 0 1-.621-4.72l1.189-1.19A1.5 1.5 0 0 1 5.378 3h13.243a1.5 1.5 0 0 1 1.06.44l1.19 1.189a3 3 0 0 1-.621 4.72M6.75 18h3.75a.75.75 0 0 0 .75-.75V13.5a.75.75 0 0 0-.75-.75H6.75a.75.75 0 0 0-.75.75v3.75c0 .414.336.75.75.75Z" />
-              </svg>
-            </button>
-            <!-- Botón Comunidades -->
-            <button class="seccion-item">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
-              </svg>
-            </button>
-            <!-- Botón Perfil -->
-            <button class="seccion-item">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3 3 0 1 1-7.5 0 3 3 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
-              </svg>
-            </button>
+    </div>    <!-- Modal para imagen expandida -->
+    <div id="modal-imagen" class="modal-overlay"    onclick="cerrarModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <img id="imagen-expandida" src="" alt="">
         </div>
-        <!-- Script JavaScript -->
-        <script src="script.js"></script>
-</body>
+    </div>
 
-<!-- Botón flotante de chat -->
-<button class="chat-fab" title="Ir a chats">
-    <svg viewBox="0 0 24 24">
-        <path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h4l4 4 4-4h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
-    </svg>
-</button>
-</html>
+    <script src="home.js"></script>
 </body>
 </html>
