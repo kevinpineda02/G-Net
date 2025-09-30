@@ -5,116 +5,6 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Animaciones generales */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes slideInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideInRight {
-    from {
-        opacity: 0;
-        transform: translateX(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideInTop {
-    from {
-        opacity: 0;
-        transform: translateY(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Clase para animaciones dinámicas desde arriba */
-.animate-from-top {
-    animation: slideInTop 0.4s ease-out both;
-}
-
-.animate-from-top-delayed {
-    animation: slideInTop 0.4s ease-out 0.15s both;
-}
-
-.animate-from-top-slow {
-    animation: slideInTop 0.6s ease-out both;
-}
-
-@keyframes bounce {
-    0%, 20%, 60%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-10px);
-    }
-    80% {
-        transform: translateY(-5px);
-    }
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-@keyframes glow {
-    0%, 100% {
-        box-shadow: var(--color-sombra) 0px 2px 12px 2px;
-    }
-    50% {
-        box-shadow: var(--color-terciario) 0px 4px 20px 4px;
-    }
-}
-
-@keyframes rotateIn {
-    from {
-        opacity: 0;
-        transform: rotate(-10deg) scale(0.8);
-    }
-    to {
-        opacity: 1;
-        transform: rotate(0deg) scale(1);
-    }
-}
 
 /* Variables para modo oscuro */
 :root{
@@ -175,6 +65,10 @@ body{
     border-bottom: var(--color-bordes) 1px solid;
     animation: slideInTop 0.4s ease-out;
     transition: background-color 0.4s ease, box-shadow 0.4s ease, border-bottom 0.4s ease;
+}
+
+.menu-responsive{
+    display: none;
 }
 
 .logo{
@@ -2384,9 +2278,121 @@ body{
     color: var(--color-terciario);
 }
 
-/* Responsive para encuestas */
+/* Animaciones generales */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInTop {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Clase para animaciones dinámicas desde arriba */
+.animate-from-top {
+    animation: slideInTop 0.4s ease-out both;
+}
+
+.animate-from-top-delayed {
+    animation: slideInTop 0.4s ease-out 0.15s both;
+}
+
+.animate-from-top-slow {
+    animation: slideInTop 0.6s ease-out both;
+}
+
+@keyframes bounce {
+    0%, 20%, 60%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    80% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: var(--color-sombra) 0px 2px 12px 2px;
+    }
+    50% {
+        box-shadow: var(--color-terciario) 0px 4px 20px 4px;
+    }
+}
+
+@keyframes rotateIn {
+    from {
+        opacity: 0;
+        transform: rotate(-10deg) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+    }
+}
+
+/* Estilos responsive para la funcionalidad de imágenes */
 @media (max-width: 768px) {
-    .creador-encuesta {
+
+.creador-encuesta {
         padding: 15px;
     }
     
@@ -2395,22 +2401,25 @@ body{
     }
     
     .opcion-input {
-        flex-direction: column;
-        gap: 5px;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 15px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        flex-grow: 1 !important;
     }
     
     .btn-eliminar-opcion {
+        display: flex-end !important;
         align-self: flex-end;
+        
     }
     
     .encuesta-configuracion {
         flex-direction: column;
         align-items: flex-start;
     }
-}
 
-/* Estilos responsive para la funcionalidad de imágenes */
-@media (max-width: 768px) {
     .lista-preview-imagenes {
         grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
         gap: 8px;
@@ -2435,19 +2444,47 @@ body{
         gap: 10px;
         align-items: stretch;
     }
-}
 
-@media (max-width: 480px) {
-    .lista-preview-imagenes {
-        grid-template-columns: repeat(3, 1fr);
+
+    .contenido {
+        padding: 80px 20px 20px 20px;
+        gap: 20px;
+    }
+
+  
+    .secciones {
+       display: none;   
+    }
+
+    
+    .mi-perfil {
+       display: none;
+    }
+
+    .notificaciones {
+        display: none;
+    }
+
+
+    .notificaciones {
+        display: none;
+    }
+
+    .iconos-container {
+        gap: 50px; /* Ajusta el espaciado entre los iconos */
     }
     
-    .preview-imagen img {
-        height: 60px;
+    /* Publicaciones responsive */
+    .publicaciones {
+        max-width: 100%;
+        width: 100%;
+        padding: 20px;
     }
+
+    .feed-publicaciones {
+        max-width: 100%;
+        width: 100%;
+    }
+
     
-    .preview-imagenes {
-        padding: 12px;
-        margin: 10px 0;
-    }
 }
